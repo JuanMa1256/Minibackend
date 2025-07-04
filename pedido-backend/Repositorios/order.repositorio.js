@@ -26,7 +26,7 @@ const findByIdAndTenant = (id, tenantId) =>
 
 //Actualizar
 const updatePedido = (id, data, tenantId) =>
-  Order.findOneAndUpdate({ _id: id, tenantId }, data, { new: true });
+  Order.findOneAndReplace({ _id: id, tenantId }, data, { new: true });
 
 
 //Eliminar

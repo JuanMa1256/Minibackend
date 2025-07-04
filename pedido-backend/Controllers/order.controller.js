@@ -46,13 +46,13 @@ const obtenerPedidosPorId = async (req, res) => {
 
 const actualizarPedido = async (req, res) => {
     try {
-        const acutalizado = await servicio.actualizarPedido(req.params.id, req.body, req.tenantId);
-        if (!actualizado) return res.status(404).json({ error: 'Pedido no encontrado' });
-        res.json(actualizado);
+      const pedido = await servicio.actualizarPedido(req.params.id, req.body, req.tenantId);
+      if (!pedido) return res.status(404).json({ error: 'Pedido no encontrado' });
+      res.json(pedido);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+      res.status(500).json({ error: error.message });
     }
-}
+};
 
 
 //ELIMINAR
