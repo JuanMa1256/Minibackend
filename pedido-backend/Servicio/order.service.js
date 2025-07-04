@@ -28,7 +28,16 @@ async function obtenerPedidosPorId(id, tenantId) {
 
 //actualizar Pedido
 async function actualizarPedido(id, data, tenantId) {
-  return repositorio.updatePedido(id, data, tenantId);
+  const datosactulizar = {
+    Fechapedido: data.Fechapedido,
+    estado: data.estado,
+    cliente: data.cliente,
+    total: data.total,
+    items: data.items,
+    tenantId: tenantId
+  };
+
+  return repositorio.updatePedido(id, datosactulizar, tenantId);
 }
 
 //Eliminar Pedido
